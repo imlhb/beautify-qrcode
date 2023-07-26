@@ -15,6 +15,7 @@ import {
     rendererFuncB,
     rendererLine,
     rendererLine2,
+    rendererDk
 } from '@/index';
 import {
     defaultResImage,
@@ -28,7 +29,9 @@ import Rem from '@/images/Rem.jpg';
 window.onload = () => {
     const qrcode = encodeData({
         text: QRBTF_URL,
-        correctLevel: 0,
+        correctLevel: 2,
+        isSpace: true,
+        rotate:180
     });
     const A1 = rendererRect(qrcode);
     const A2 = rendererRound(qrcode);
@@ -49,11 +52,20 @@ window.onload = () => {
             document.querySelector('.c2').innerHTML = res;
         }
     );
+    const Dk = rendererLine(qrcode, {
+        type:2,
+        size:100,
+        posType: 4,
+    });
+
+
 
     window.document.body.innerHTML = `<ul>
     <li>${A1}</li>
+    <li>${Dk}</li>
     <li>${A2}</li>
     <li>${A3}</li>
+
     <li>${sp1}</li>
     <li>${sp2}</li>
     <li>${B1}</li>

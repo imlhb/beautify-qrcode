@@ -6,7 +6,7 @@ const schemaLine = yup.object().shape({
     type: yup.mixed().oneOf([0, 1, 2, 3, 4, 5, 6]).default(2),
     size: yup.number().default(50),
     opacity: yup.number().default(100),
-    posType: yup.mixed().oneOf([0, 1, 2, 3]).default(3),
+    posType: yup.mixed().oneOf([0, 1, 2, 3, 4]).default(4),
     otherColor: yup.string().default('#000000'),
     posColor: yup.string().default('#000000'),
 });
@@ -28,7 +28,7 @@ const schemaLine2 = yup.object().shape({
  * @param {String} [options.type]  连线方向 0=>左右 1=>上下 2=>纵横 3=>回环 4=>左上—右下 5=>右上—左下 6=>交叉"
  * @param {String} [options.size] 连线粗细
  * @param {String} [options.opacity] 连线不透明度
- * @param {String} [options.posType] 定位点样式  0=>矩形 1=>圆形 2=>行星 3=>圆角矩形
+ * @param {String} [options.posType] 定位点样式  0=>矩形 1=>圆形 2=>行星 3=>圆角矩形 4=二千矩形
  * @param {String} [options.otherColor] 连线颜色
  * @param {String} [options.posColor] 定位点颜色
  */
