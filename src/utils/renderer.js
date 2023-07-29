@@ -28,9 +28,9 @@ export function createRenderer(renderer) {
     };
 
     return ({ qrcode, params }) => {
-        const { width, height,rotate } = qrcode.$options;
+        const { width, height } = qrcode.$options;
         return `
-            <svg width="${width}" height="${height}" style="transform: rotate(${rotate}deg);" viewBox="${renderer.getViewBox(
+            <svg width="${width}" height="${height}" viewBox="${renderer.getViewBox(
             qrcode
         )}" fill="white"
                  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">

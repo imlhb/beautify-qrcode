@@ -6,7 +6,7 @@ const schemaLine = yup.object().shape({
     type: yup.mixed().oneOf([0, 1, 2, 3, 4, 5, 6]).default(2),
     size: yup.number().default(50),
     opacity: yup.number().default(100),
-    posType: yup.mixed().oneOf([0, 1, 2, 3, 4]).default(4),
+    posType: yup.mixed().oneOf([0, 1, 2, 3, 4]).default(2),
     otherColor: yup.string().default('#000000'),
     posColor: yup.string().default('#000000'),
 });

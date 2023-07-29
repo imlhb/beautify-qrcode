@@ -10,7 +10,7 @@ const schemaBase = yup.object().shape({
     // 信息点不透明度
     opacity: yup.number().default(100),
     // 定位点样式['矩形', '圆形', '行星','圆角矩形']
-    posType: yup.mixed().oneOf([0, 1, 2, 3]).default(0),
+    posType: yup.mixed().oneOf([0, 1, 2, 3, 4]).default(4),
     // 信息点颜色
     otherColor: yup.string().default('#000000'),
     // 定位点点颜色

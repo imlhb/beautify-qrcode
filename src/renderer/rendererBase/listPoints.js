@@ -175,6 +175,42 @@ export default function listPoints(qrcode, params) {
                             }"
                         />`
                     );
+                }else if(posType === 4){
+                    // 矩形
+                    pointList.push(
+                        `<rect
+                            width="${3}"
+                            height="${3}"
+                            key="${id++}"
+                            fill="${posColor}"
+                            x="${x-1}"
+                            y="${y-1}"
+                            ry="0.5"
+                        />`
+                    );
+
+                    for (let w = 0; w < vw.length; w++) {
+                        pointList.push(
+                            `<circle
+                                key="${id++}"
+                                fill="${posColor}"
+                                cx="${x + vw[w] + 0.5}"
+                                cy="${y + 0.5}"
+                                r="${0.5}"
+                            />`
+                        );
+                    }
+                    for (let h = 0; h < vh.length; h++) {
+                        pointList.push(
+                            `<circle
+                                key="${id++}"
+                                fill="${posColor}"
+                                cx="${x + 0.5}"
+                                cy="${y + vh[h] + 0.5}"
+                                r="${0.5}"
+                            />`
+                        );
+                    }
                 }
             } else if (typeTable[x][y] === QRPointType.POS_OTHER) {
                 if (posType === 0) {
